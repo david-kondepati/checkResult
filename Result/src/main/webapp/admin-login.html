@@ -1,69 +1,153 @@
 <html>
 	<head>
-		<title>Naresh IT</title>
+		<title>Naresh IT - Admin Login</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 	</head>
-	
-	
+
 	<style>
-		header{
-			display:flex;
-			align-items:center;
-			justify-content:space-around;
+		/* Global styles */
+		body {
+			font-family: 'Roboto', sans-serif;
+			margin: 0;
+			background-color: #f4f7f6; /* Light, clean background for the page */
 		}
-		
-		#pages{
-			display:flex;
-			column-gap:20px;
+
+		/* --- Original Header Styles (Slightly polished) --- */
+		header {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			background-color: white;
+			padding: 10px 0;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 		}
-		
-		#pages>a{
-			border-radius:10px;
-			font-size:20px;
-			font-weight:600;
-			letter-spacing:2px;
+
+		#pages {
+			display: flex;
+			column-gap: 20px;
+		}
+
+		#pages>a {
+			text-decoration: none;
+			border-radius: 10px;
+			font-size: 18px;
+			font-weight: 600;
+			letter-spacing: 1px;
 			width: fit-content;
-			padding:10px;
-			background-color:red;
-			color:white;
+			padding: 10px 15px;
+			background-color: #d9534f; /* A slightly softer red */
+			color: white;
+			transition: background-color 0.3s ease;
 		}
-		
-		#pages>a:hover{
-			cursor:pointer;
-			background-color:black;
+
+		#pages>a:hover {
+			cursor: pointer;
+			background-color: #333;
 		}
-		
-		#login-btn{
-			height:45px;
-			width:fit-content;
-			font-size:18px;
-			background-color:blue;
-			color:white;
-			cursor:pointer;
-			border-radius:10px;
-			border:none;
+
+		/* --- New Login Form Styles (Inspired by your template) --- */
+		.login-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: calc(100vh - 150px); /* Fill the screen below the header */
+			padding: 40px 20px;
 		}
-		
-		#form{
-			display:flex;
-			align-items:center;
-			justify-content:center;
+
+		/* The main white box holding the two panels */
+		.login-box {
+			display: flex;
+			width: 800px;
+			height: 500px;
+			background-color: #fff;
+			box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+			border-radius: 20px;
+			overflow: hidden; /* Keeps the corners rounded */
 		}
-		
-		
-		form{
-			border:1px solid black;
-			padding:20px;
+
+		/* The left-side welcome panel with the teal gradient */
+		.welcome-panel {
+			flex: 1;
+			background: linear-gradient(to bottom right, #00bfa5, #00897b); /* Teal gradient */
+			color: white;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			padding: 40px;
 		}
-		
-		
-		input{
-			height:42px;
-			width:250px;
-			font-size:18px;
-			outline:none;
-			border:1px solid black;
-			padding-left:10px;
-			border-radius:12px;
+
+		.welcome-panel h1 {
+			font-size: 2.5em;
+			margin-bottom: 15px;
+		}
+
+		.welcome-panel p {
+			font-size: 1.1em;
+			line-height: 1.6;
+		}
+
+		/* The right-side panel containing the form */
+		.form-panel {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			padding: 40px;
+		}
+
+		.form-panel h1 {
+			color: #333;
+			margin-bottom: 30px;
+		}
+
+		/* Styling for the form and its elements */
+		form {
+			width: 100%;
+			max-width: 300px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		input {
+			width: 100%;
+			height: 48px;
+			font-size: 16px;
+			outline: none;
+			border: 1px solid #ccc;
+			padding: 0 20px; /* Padding inside the input fields */
+			border-radius: 24px; /* Rounded, "pill" shape */
+			margin-bottom: 20px;
+			transition: border-color 0.3s ease;
+		}
+
+		input:focus {
+			border-color: #00796b; /* Teal highlight on focus */
+		}
+
+		#login-btn {
+			width: 100%;
+			height: 48px;
+			font-size: 18px;
+			background-color: #00796b; /* Teal color to match the welcome panel */
+			color: white;
+			cursor: pointer;
+			border-radius: 24px;
+			border: none;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			transition: background-color 0.3s ease, transform 0.2s ease;
+		}
+
+		#login-btn:hover {
+			background-color: #004d40; /* Darker teal on hover */
+			transform: translateY(-2px); /* Slight lift effect on hover */
 		}
 	</style>
 	
@@ -79,52 +163,34 @@
 				<a>Trainer's Profile</a>
 			</div>
 		</header>
-		<hr>
 		
-		<br/><br/><br/><br/><br/>
-		
-		<center>
-			<h1>Admin Login Page</h1>
-		</center>
-		
-		<div id="form">
-			<form action="app/validateAdmin" method="post">
-				<input
-				type="email"
-				name="email"
-				placeholder="enter your email"
-				required
-				/>
-				
-				<br/><br/>
-				
-				<input
-				type="password"
-				name="password"
-				placeholder="enter your password"
-				required
-				/>
-				
-				<br/><br/>
-				
-				<button id="login-btn">Login</button>
-			</form>
+		<div class="login-container">
+			<div class="login-box">
+				<div class="welcome-panel">
+					<h1>Welcome Admin!</h1>
+					<p>Please enter your credentials to access the administrative dashboard.</p>
+				</div>
+				<div class="form-panel">
+					<h1>Admin Login</h1>
+					<form action="app/validateAdmin" method="post">
+						<input
+						type="email"
+						name="email"
+						placeholder="Enter your email"
+						required
+						/>
+						
+						<input
+						type="password"
+						name="password"
+						placeholder="Enter your password"
+						required
+						/>
+						
+						<button id="login-btn">Login</button>
+					</form>
+				</div>
+			</div>
 		</div>
-		
-
-		
-
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

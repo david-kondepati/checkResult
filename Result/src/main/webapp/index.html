@@ -1,47 +1,139 @@
 <html>
 	<head>
-		<title>Naresh IT</title>
+		<title>Naresh IT - Welcome</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 	</head>
 	
-	
 	<style>
-		header{
-			display:flex;
-			align-items:center;
-			justify-content:space-around;
+		/* --- Global Styles --- */
+		body {
+			font-family: 'Roboto', sans-serif;
+			margin: 0;
+			background-color: #f4f7f6; /* A light, neutral background */
+			color: #333;
+		}
+
+		/* --- Header Styles --- */
+		header {
+			display: flex;
+			align-items: center;
+			justify-content: space-around;
+			background-color: white;
+			padding: 10px 0;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 		}
 		
-		#pages{
-			display:flex;
-			column-gap:20px;
+		#pages {
+			display: flex;
+			column-gap: 20px;
 		}
 		
-		#pages>a{
-			border-radius:10px;
-			font-size:20px;
-			font-weight:600;
-			letter-spacing:2px;
-			width: fit-content;
-			padding:10px;
-			background-color:red;
-			color:white;
+		#pages>a {
+			text-decoration: none; /* Removed underline from links */
+			border-radius: 10px;
+			font-size: 18px;
+			font-weight: 600;
+			letter-spacing: 1px;
+			padding: 10px 15px;
+			background-color: #d9534f; /* A professional shade of red */
+			color: white;
+			transition: background-color 0.3s ease, transform 0.2s ease;
 		}
 		
-		#pages>a:hover{
-			cursor:pointer;
-			background-color:black;
+		#pages>a:hover {
+			cursor: pointer;
+			background-color: #333; /* Darker color on hover */
+			transform: translateY(-2px); /* Slight lift effect */
 		}
 		
-		#result-btn{
-			height:45px;
-			width:fit-content;
-			font-size:18px;
-			background-color:blue;
-			color:white;
-			cursor:pointer;
-			border-radius:10px;
-			border:none;
+		/* --- Hero Section Styles --- */
+		.hero-section {
+			text-align: center;
+			padding: 80px 20px;
+			background: linear-gradient(to right, #6dd5ed, #2193b0); /* A fresh, modern gradient */
+			color: white;
 		}
+
+		.hero-section h1 {
+			font-size: 3em;
+			margin-bottom: 10px;
+			font-weight: 700;
+		}
+		
+		.hero-section p {
+			font-size: 1.2em;
+			margin-bottom: 30px;
+			font-weight: 400;
+		}
+
+		/* --- Main Content Area Styles --- */
+		.main-content {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 50px 20px;
+			gap: 40px; /* Space between the two cards */
+		}
+
+		/* --- Card Styles --- */
+		.card {
+			background-color: white;
+			border-radius: 15px;
+			box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+			padding: 40px;
+			text-align: center;
+			width: 300px;
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+
+		.card:hover {
+			transform: translateY(-5px); /* Lift card on hover */
+			box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+		}
+
+		.card h2 {
+			font-size: 1.8em;
+			margin-bottom: 20px;
+			color: #2193b0; /* Matching the hero gradient */
+		}
+		
+		/* --- Button Styles --- */
+		.action-btn {
+			display: inline-block;
+			text-decoration: none;
+			height: 50px;
+			line-height: 50px;
+			padding: 0 30px;
+			font-size: 18px;
+			font-weight: 700;
+			color: white;
+			cursor: pointer;
+			border-radius: 25px; /* Pill-shaped buttons */
+			border: none;
+			transition: background-color 0.3s ease, transform 0.2s ease;
+		}
+
+		/* Specific button colors */
+		#student-btn {
+			background-color: #5cb85c; /* Green for student action */
+		}
+
+		#student-btn:hover {
+			background-color: #4cae4c; /* Darker green on hover */
+			transform: translateY(-2px);
+		}
+
+		#admin-btn {
+			background-color: #f0ad4e; /* Orange for admin action */
+		}
+
+		#admin-btn:hover {
+			background-color: #ec971f; /* Darker orange on hover */
+			transform: translateY(-2px);
+		}
+
 	</style>
 	
 	<body>
@@ -56,33 +148,22 @@
 				<a>Trainer's Profile</a>
 			</div>
 		</header>
-		<hr>
 		
-		<marquee>
-			<h2>Result of screening test has been declared</h2>
-		</marquee>
+		<div class="hero-section">
+			<h1>Screening Test Results Are Now Live!</h1>
+			<p>Find out your results and take the next step in your journey with us.</p>
+		</div>
 		
-		<center>
-			<a href="result-check.html">
-				<button id="result-btn">Check Your Result Now</button>
-			</a>
-			<br/><br/><br/><br/><br/><br/>
-			<h1>Are you an admin?</h1>
-			<a href="admin-login.html">
-				<button id="result-btn">Login as Admin</button>
-			</a>
-		</center>
+		<div class="main-content">
+			<div class="card">
+				<h2>Check Your Result</h2>
+				<a href="result-check.html" id="student-btn" class="action-btn">Check Now</a>
+			</div>
+			
+			<div class="card">
+				<h2>Are you an Admin?</h2>
+				<a href="admin-login.html" id="admin-btn" class="action-btn">Login Here</a>
+			</div>
+		</div>
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
