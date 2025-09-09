@@ -1,0 +1,130 @@
+<html>
+	<head>
+		<title>Naresh IT</title>
+	</head>
+	
+	
+	<style>
+		header{
+			display:flex;
+			align-items:center;
+			justify-content:space-around;
+		}
+		
+		#pages{
+			display:flex;
+			column-gap:20px;
+		}
+		
+		#pages>a{
+			border-radius:10px;
+			font-size:20px;
+			font-weight:600;
+			letter-spacing:2px;
+			width: fit-content;
+			padding:10px;
+			background-color:red;
+			color:white;
+		}
+		
+		#pages>a:hover{
+			cursor:pointer;
+			background-color:black;
+		}
+		
+		#login-btn{
+			height:45px;
+			width:fit-content;
+			font-size:18px;
+			background-color:blue;
+			color:white;
+			cursor:pointer;
+			border-radius:10px;
+			border:none;
+		}
+		
+		#form{
+			display:flex;
+			align-items:center;
+			justify-content:center;
+		}
+		
+		
+		form{
+			border:1px solid black;
+			padding:20px;
+		}
+		
+		
+		input{
+			height:42px;
+			width:250px;
+			font-size:18px;
+			outline:none;
+			border:1px solid black;
+			padding-left:10px;
+			border-radius:12px;
+		}
+	</style>
+	
+	<body>
+		<header>
+			<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzfUfHs6P3NTxCGY2578fFO78H4F9WcQG5DEN03ZZtTrE_czipCIwzt-hFsohindMukA&usqp=CAU" width="250"/>
+			
+			<div id="pages">
+				<a>Home</a>
+				<a>About</a>
+				<a>Contact</a>
+				<a>New Batches</a>
+				<a>Trainer's Profile</a>
+			</div>
+		</header>
+		<hr>
+		
+		<br/><br/><br/><br/><br/>
+		
+		<center>
+			<h1>Admin Login Page</h1>
+		</center>
+		
+		<div id="form">
+			<form action="app/validateAdmin" method="post">
+				<input
+				type="email"
+				name="email"
+				placeholder="enter your email"
+				required
+				/>
+				
+				<br/><br/>
+				
+				<input
+				type="password"
+				name="password"
+				placeholder="enter your password"
+				required
+				/>
+				
+				<br/><br/>
+				
+				<button id="login-btn">Login</button>
+			</form>
+		</div>
+		
+
+		
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

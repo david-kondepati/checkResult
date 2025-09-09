@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title>Check your result</title>
+	</head>
+	
+	<style>
+		#result{
+			display:flex;
+			align-items:center;
+			justify-content:center;
+		}
+		
+		form{
+			padding:30px;
+			border:1.5px solid black;
+		}
+		
+		input{
+			height:45px;
+			width:220px;
+			border:1px solid black;
+			font-size:20px;
+			outline:none;
+			border-radius:12px;
+			padding-left:12px;
+		}
+		
+		
+		button{
+			height:45px;
+			padding:10px;
+			font-size:20px;
+			font-weight:600;
+			border:none;
+			border-radius:10px;
+			background-color:blue;
+			color:white;
+			cursor:pointer;
+		}
+	</style>
+	
+	<body>
+		<marquee>
+			<h2>Check your result now</h2>
+		</marquee>
+		
+		
+		<div id="result">
+			<form id="resultCheck" action="app/checkResult" method="post">
+			
+			<input
+			type="text"
+			name="stuid"
+			placeholder="Enter your Id(roll no)"
+			required
+			/>
+			
+			<br/><br/>
+			<button>Check Now</button>
+		</form>
+		</div>
+		
+		
+	</body>
+</html>
